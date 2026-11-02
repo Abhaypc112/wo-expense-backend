@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: wo-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: wo_expense_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: wo_expense_db_011
+    ports:
+      - "5434:5432"
+    volumes:
+      - wo_pgdata:/var/lib/postgresql/data
+    # Newer Postgres images drop the legacy "Asia/Calcutta" name that DBeaver/Java sends.
+    entrypoint:
+      - sh
+      - -c
+      - ln -sf /usr/share/zoneinfo/Asia/Kolkata /usr/share/zoneinfo/Asia/Calcutta && exec docker-entrypoint.sh postgres
+
+volumes:
+  wo_pgdata:

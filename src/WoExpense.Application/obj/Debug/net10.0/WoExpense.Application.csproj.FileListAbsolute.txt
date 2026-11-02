@@ -1,0 +1,15 @@
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\bin\Debug\net10.0\WoExpense.Application.deps.json
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\bin\Debug\net10.0\WoExpense.Application.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\bin\Debug\net10.0\WoExpense.Application.pdb
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\bin\Debug\net10.0\WoExpense.Domain.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\bin\Debug\net10.0\WoExpense.Domain.pdb
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.csproj.AssemblyReference.cache
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.AssemblyInfoInputs.cache
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.AssemblyInfo.cs
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.csproj.CoreCompileInputs.cache
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpens.EF6680BC.Up2Date
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\refint\WoExpense.Application.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.pdb
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\ref\WoExpense.Application.dll

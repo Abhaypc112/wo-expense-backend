@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/WoExpense.Api/WoExpense.Api.csproj" />
+    <Project Path="src/WoExpense.Application/WoExpense.Application.csproj" />
+    <Project Path="src/WoExpense.Domain/WoExpense.Domain.csproj" />
+    <Project Path="src/WoExpense.Infrastructure/WoExpense.Infrastructure.csproj" />
+  </Folder>
+</Solution>
