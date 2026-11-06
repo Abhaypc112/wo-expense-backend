@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using Google.Apis.Auth;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -45,8 +46,49 @@ public class AuthService : IAuthService
         var normalizedEmail = request.Email.Trim().ToLower();
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == normalizedEmail);
 
-        if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        if (user == null || string.IsNullOrEmpty(user.PasswordHash) || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             throw new UnauthorizedAccessException("Invalid email or password.");
+
+        return await GenerateAuthResponseAsync(user);
+    }
+
+    public async Task<AuthResponse> GoogleLoginAsync(GoogleLoginRequest request)
+    {
+        var clientIds = _config.GetSection("Google:ClientIds").GetChildren()
+            .Select(c => c.Value!).Where(v => !string.IsNullOrWhiteSpace(v)).ToArray();
+        GoogleJsonWebSignature.Payload payload;
+        try
+        {
+            payload = await GoogleJsonWebSignature.ValidateAsync(request.IdToken,
+                new GoogleJsonWebSignature.ValidationSettings { Audience = clientIds });
+        }
+        catch (InvalidJwtException ex)
+        {
+            Console.Error.WriteLine($"Google token rejected: {ex.Message}");
+            throw new UnauthorizedAccessException("Invalid Google token.");
+        }
+
+        if (!payload.EmailVerified)
+            throw new UnauthorizedAccessException("Google email is not verified.");
+
+        var email = payload.Email.Trim().ToLower();
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.GoogleId == payload.Subject)
+                   ?? await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+        if (user == null)
+        {
+            user = new User
+            {
+                FullName = (payload.Name ?? email).Trim(),
+                Email = email,
+                GoogleId = payload.Subject
+            };
+            _context.Users.Add(user);
+        }
+        else if (user.GoogleId == null)
+        {
+            user.GoogleId = payload.Subject; // link existing email account
+        }
 
         return await GenerateAuthResponseAsync(user);
     }

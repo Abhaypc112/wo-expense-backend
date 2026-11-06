@@ -45,6 +45,19 @@ public class AuthController : ControllerBase
         }
     }
 
+    [HttpPost("google")]
+    public async Task<IActionResult> Google([FromBody] GoogleLoginRequest request)
+    {
+        try
+        {
+            return Ok(await _authService.GoogleLoginAsync(request));
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new { message = ex.Message });
+        }
+    }
+
     [HttpPost("refresh")]
     public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequest request)
     {
@@ -64,7 +77,7 @@ public class AuthController : ControllerBase
     public IActionResult GetCurrentUser()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var email = User.FindFirstValue(ClaimTypes.Email);
+        var email = User.FindFirstValue(ClaimTypes.Email) ?? User.FindFirstValue("email");
         var fullName = User.FindFirstValue("fullName");
 
         return Ok(new { userId, fullName, email });

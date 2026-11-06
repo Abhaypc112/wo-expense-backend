@@ -90,6 +90,8 @@ public class AppDbContext : DbContext
             entity.HasIndex(u => u.Email).IsUnique().HasFilter("\"IsDeleted\" = false");
             entity.Property(u => u.FullName).IsRequired().HasMaxLength(100);
             entity.Property(u => u.Email).IsRequired().HasMaxLength(150);
+            entity.Property(u => u.GoogleId).HasMaxLength(100);
+            entity.HasIndex(u => u.GoogleId).IsUnique().HasFilter("\"GoogleId\" IS NOT NULL AND \"IsDeleted\" = false");
         });
 
         modelBuilder.Entity<RefreshToken>(entity =>

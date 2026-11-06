@@ -6,6 +6,8 @@ public record LoginRequest(string Email, string Password);
 
 public record RefreshTokenRequest(string RefreshToken);
 
+public record GoogleLoginRequest(string IdToken);
+
 public record AuthResponse(
     Guid UserId,
     string FullName,

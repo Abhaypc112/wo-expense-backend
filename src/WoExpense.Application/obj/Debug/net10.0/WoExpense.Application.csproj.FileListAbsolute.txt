@@ -13,3 +13,4 @@ C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExp
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\refint\WoExpense.Application.dll
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.pdb
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\ref\WoExpense.Application.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Application\obj\Debug\net10.0\WoExpense.Application.sourcelink.json

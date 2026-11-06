@@ -17,3 +17,4 @@ C:\Learning\WO-EXPENCE\backend\src\WoExpense.Infrastructure\obj\Debug\net10.0\re
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Infrastructure\obj\Debug\net10.0\WoExpense.Infrastructure.pdb
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Infrastructure\obj\Debug\net10.0\WoExpense.Infrastructure.genruntimeconfig.cache
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Infrastructure\obj\Debug\net10.0\ref\WoExpense.Infrastructure.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Infrastructure\obj\Debug\net10.0\WoExpense.Infrastructure.sourcelink.json

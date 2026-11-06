@@ -9,3 +9,4 @@ C:\Learning\WO-EXPENCE\backend\src\WoExpense.Domain\obj\Debug\net10.0\WoExpense.
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Domain\obj\Debug\net10.0\refint\WoExpense.Domain.dll
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Domain\obj\Debug\net10.0\WoExpense.Domain.pdb
 C:\Learning\WO-EXPENCE\backend\src\WoExpense.Domain\obj\Debug\net10.0\ref\WoExpense.Domain.dll
+C:\Learning\WO-EXPENCE\backend\src\WoExpense.Domain\obj\Debug\net10.0\WoExpense.Domain.sourcelink.json
